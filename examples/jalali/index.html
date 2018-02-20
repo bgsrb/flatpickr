@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+    <link href="../../dist/flatpickr.min.css" rel="stylesheet">
+    <link href="../../dist/themes/rtl.css" rel="stylesheet">
+    <script src="jdate.min.js"></script>
+    <script>window.Date=window.JDate;</script>
+    <script src="../../dist/flatpickr.min.js"></script>
+    <script src="../../dist/plugins/rangePlugin.js"></script>
+    <script src="../../dist/l10n/fa.js"></script>
+    <style>
+    html,body{
+       direction:rtl;
+       text-align: right;
+    }
+    </style>
+</head>
+<body >
+    <div class="container">
+        <br/>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-auto">
+                    <label for="startDate">تاریخ شروع</label>
+                    <input readonly="readonly" class="readonly form-control" id="startDate"  style="direction:ltr; width:210px;">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="toDate">تاریخ پایان</label>
+                    <input  readonly="readonly" class="readonly form-control" id="toDate"  style="direction:ltr; width:210px;">
+                </div>
+            </div>
+        </form>
+    </div>  
+</body>
+<script>
+    flatpickr("#startDate", {
+        enableTime: true,
+        "locale": "fa" ,
+        "plugins": [new rangePlugin({ input: "#toDate"})]
+    });
+</script>
+</html>
