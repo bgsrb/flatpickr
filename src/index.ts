@@ -67,6 +67,27 @@ function FlatpickrInstance(
   function setupHelperFunctions() {
     self.utils = {
       getDaysInMonth(month = self.currentMonth, yr = self.currentYear) {
+        
+        if (self.config.locale === "fa") {
+          let calcedYear = yr - Math.floor(month / 12);
+          let calcedMonth = month - (Math.floor(month / 12) * 12);
+
+          if (calcedMonth < 0) {
+            calcedMonth += 12;
+            calcedYear -= 1;
+          } else if (calcedMonth === 0) {
+            calcedMonth = 12;
+          }
+          if (calcedMonth < 6) {
+            return 31;
+          } else if (calcedMonth < 11) {
+            return 30;
+          } else if (((((((calcedYear - ((calcedYear > 0) ? 474 : 473)) % 2820) + 474) + 38) * 682) % 2816) < 682) {
+            return 30;
+          }
+          return 29;
+        }
+
         if (month === 1 && ((yr % 4 === 0 && yr % 100 !== 0) || yr % 400 === 0))
           return 29;
 

@@ -1,0 +1,21 @@
+@require "../base_rtl"
+
+.flatpickr-rContainer,.flatpickr-calendar,.dayContainer,.flatpickr-weekdays,.flatpickr-days
+    direction: rtl;
+    text-align: right;
+
+.flatpickr-day.selected.endRange, .flatpickr-day.startRange.endRange, .flatpickr-day.endRange.endRange 
+    border-radius: 50px 0 0 50px;
+
+.flatpickr-day.selected.startRange, .flatpickr-day.startRange.startRange, .flatpickr-day.endRange.startRange 
+    border-radius: 0 50px 50px 0;
+
+.numInputWrapper span.arrowUp,.numInputWrapper span.arrowDown
+    border:0;
+
+.flatpickr-current-month .numInputWrapper span.arrowUp,.flatpickr-current-month .numInputWrapper span.arrowDown
+    right: auto;
+    left: 0;
+
+.flatpickr-time
+    flex-direction: row-reverse; 
